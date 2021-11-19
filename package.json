@@ -1,0 +1,11 @@
+{
+  "name": "nba-scoredata",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/bcha92/NBA-ScoreData.git",
+  "author": "bcha92@hotmail.com <bcha92@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn --cwd client run start"
+  }
+}
