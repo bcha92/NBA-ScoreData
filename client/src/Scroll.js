@@ -4,8 +4,12 @@ import styled from "styled-components";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
 
 // Date Scroll Button Component
-const Scroll = ({ id }) => {
-    return <ScrollButton>
+const Scroll = ({ id, date, setDate }) => {
+    return <ScrollButton
+        onClick={() => id === "left" ?
+        setDate(new Date(date.setDate(date.getDate() - 1))) : id === "right" ?
+        setDate(new Date(date.setDate(date.getDate() + 1))) : null
+    }>
         {id === "left" && <>
             <FaArrowLeft size="100px" />
             Previous Day

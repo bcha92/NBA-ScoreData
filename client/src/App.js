@@ -16,9 +16,9 @@ const App = () => {
     <BrowserRouter>
       <Header>
         <h1>NBA Games Schedule</h1>
-        <p>{
+        <p>{ // Date indicator for header
           date.toDateString() === new Date().toDateString() ?
-          date.toDateString() + " [TODAY]" : date.toDateString()
+          `TODAY: ${date.toDateString()}` : date.toDateString()
         }</p>
       </Header>
       <Routes>
@@ -34,7 +34,7 @@ const App = () => {
 // Styled Components
 const Wrapper = styled.div`
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   background: #ddd;
   width: 100vw;
   height: 100vh;
