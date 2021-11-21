@@ -9,9 +9,10 @@ const Game = ({ // Deconstructed Props
 }) => {
     const [expand, setExpand] = useState(false);
 
-    return <GameWrap style={{
-        border: expand && "3px solid green",
-    }}>
+    return <GameWrap
+        style={{ border: expand && "3px solid green" }}
+        onClick={() => setExpand(!expand)}
+    >
         <h3>{ // Main schedule in Eastern Time
             `${
                 startTimeTBD ? "TBD" : startTime
@@ -46,7 +47,7 @@ const Game = ({ // Deconstructed Props
             <p>Series Losses: {visitor.seriesLoss === "" ? "TBD" : visitor.seriesLoss}</p>
         </>}
 
-        <p className="dropdown" onClick={() => setExpand(!expand)}>
+        <p className="dropdown">
             {expand ? <><GoTriangleUp /> click to collapse</> :
             <><GoTriangleRight /> click to expand</>}
         </p>
@@ -65,6 +66,7 @@ const GameWrap = styled.li`
     width: 100%;
     transition: 500ms ease-out;
     background: white;
+    cursor: pointer;
 
     & > h4, h5 { margin: 5px 0 };
     & > .ongoing, p > span { color: orangered };
@@ -72,7 +74,6 @@ const GameWrap = styled.li`
         display: flex;
         align-items: center;
         margin-top: 5px;
-        cursor: pointer;
         font-style: italic;
         font-size: small;
     };
