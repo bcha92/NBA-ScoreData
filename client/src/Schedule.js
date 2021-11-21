@@ -29,7 +29,6 @@ const Schedule = ({ date, setDate }) => {
             }
         })
     }, [date])
-    console.log(games);
 
     return <Wrap>
         <Scroll id="left" date={date} setDate={setDate} /* Scroll to Previous Day */ />
@@ -49,7 +48,7 @@ const Schedule = ({ date, setDate }) => {
             games !== null && <GamesWrap>{
                 games.map(game => <Game
                     key={game.gameId} // GameID (KEY)
-                    id={game.gameId} // GameID
+                    // id={game.gameId} // GameID
                     arena={game.arena} // Venue
 
                     home={game.hTeam} // Home Team Info
@@ -57,8 +56,11 @@ const Schedule = ({ date, setDate }) => {
 
                     startTime={game.startTimeEastern} // Game Start Time (Eastern Time GMT-0500)
                     startTimeTBD={game.isStartTimeTBD} // Unscheduled Game Start Time
+                    endTime={game.endTimeUTC} // Game End Time
+
                     current={game.isGameActivated} // Is the game underway?
-                    status={game.statusNum}
+                    status={game.statusNum} // Status Code // 3 equals "finished game"
+                    duration={game.gameDuration} // Duration of Game (Hours, Minutes)
                 />)
             }</GamesWrap>}
         </ScheduleWrap>
@@ -70,22 +72,26 @@ const Schedule = ({ date, setDate }) => {
 // Styled Components
 const Wrap = styled.div`
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
 `;
 
-const ScheduleWrap = styled(Wrap)`
-    flex-direction: column;
+const ScheduleWrap = styled.div`
+    display: flex;
+    flex-flow: column wrap;
     flex: 1;
-    padding: 50px;
-    align-items: center;
+    padding: 50px 100px;
     transition: 300ms ease-in-out;
     
-    & > h2 { margin-bottom: 20px };
+    & > h2 {
+        margin-bottom: 20px;
+        text-align: center;
+    };
 `;
 
 const GamesWrap = styled.ul`
     display: flex;
     flex-direction: column;
+    align-items: center;
     flex: 1;
     list-style: none;
 `;

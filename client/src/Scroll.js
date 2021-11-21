@@ -29,12 +29,13 @@ const ScrollButton = styled.button`
     justify-content: center;
     align-items: center;
     max-width: 200px;
-    max-height: 100%;
+    height: 100%;
     padding: 20px;
     font-weight: bold;
     font-size: large;
     border: none;
     background: none;
+    cursor: pointer;
     transition: 200ms ease-in-out;
 
     &:hover { background: white };
