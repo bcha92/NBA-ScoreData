@@ -38,6 +38,7 @@ const Wrapper = styled.div`
   background: #ddd;
   width: 100vw;
   height: 100vh;
+  overflow-y: auto;
 `;
 
 // Top Header (Static)

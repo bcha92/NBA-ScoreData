@@ -58,6 +58,7 @@ const Schedule = ({ date, setDate }) => {
                     startTime={game.startTimeEastern} // Game Start Time (Eastern Time GMT-0500)
                     startTimeTBD={game.isStartTimeTBD} // Unscheduled Game Start Time
                     current={game.isGameActivated} // Is the game underway?
+                    status={game.statusNum}
                 />)
             }</GamesWrap>}
         </ScheduleWrap>
@@ -70,19 +71,23 @@ const Schedule = ({ date, setDate }) => {
 const Wrap = styled.div`
     display: flex;
     flex-flow: row wrap;
-    flex: 1;
 `;
 
-const GamesWrap = styled(Wrap)`
+const ScheduleWrap = styled(Wrap)`
     flex-direction: column;
-`;
-
-const ScheduleWrap = styled(GamesWrap)`
+    flex: 1;
     padding: 50px;
     align-items: center;
     transition: 300ms ease-in-out;
-
+    
     & > h2 { margin-bottom: 20px };
+`;
+
+const GamesWrap = styled.ul`
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    list-style: none;
 `;
 
 export default Schedule;

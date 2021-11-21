@@ -29,7 +29,7 @@ const ScrollButton = styled.button`
     justify-content: center;
     align-items: center;
     max-width: 200px;
-    flex: 1;
+    max-height: 100%;
     padding: 20px;
     font-weight: bold;
     font-size: large;
