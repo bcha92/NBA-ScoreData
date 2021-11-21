@@ -2,7 +2,11 @@
 ReactJS Front End Application based on past, present, and future schedules of daily NBA score data statistics provided by https://data.nba.net/10s/prod/v1/today.json
 
 ---
-## Getting Started (VS Code)
+## Getting Started (Easy online access to netlify.app)
+Hosted on Netlify: https://bcha-nbagameschedules.netlify.app/.
+
+---
+## Getting Started (Local Hosting on your computer via VS Code)
 1. Open a terminal (Powershell or Git)
 2. Type `cd client` and press enter to open the ReactJS client folder
 3. Type `yarn install` and press enter to install the package.json modules (react-router-dom, react-icons, styled-components, etc...)
